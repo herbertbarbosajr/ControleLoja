@@ -1,0 +1,68 @@
+﻿@model ControleLoja.Application.DTOs.ProductDTO
+
+<h2>Cadastrar novo Produto</h2>
+
+<form asp-action="Create">
+
+    <div class="form-horizontal">
+
+        <hr />
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Nome" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Descrição" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Descrição" class="form-control" />
+                <span asp-validation-for="Descrição" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Imagem" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Imagem" class="form-control" />
+                <span asp-validation-for="Imagem" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Preço" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Preço" class="form-control" />
+                <span asp-validation-for="Preço" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Estoque" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Estoque" class="form-control" />
+                <span asp-validation-for="Estoque" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="CategoriaId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+               <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId"> </select>                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-info">Voltar para Lista</a>
+            </div>
+        </div>
+    </div>
+</form>
