@@ -1,5 +1,6 @@
-﻿using ControleLoja.Application.DTOs;
+﻿using ControleLoja.Application.DTO;
 using ControleLoja.Application.Interfaces;
+using ControleLoja.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -61,7 +62,7 @@ namespace ControleLoja.WebUI.Controllers
             if (productDto == null) return NotFound();
 
             var categories = await _categoryService.GetCategories();
-            ViewBag.CategoryId = new SelectList(categories, "Id", "Nome", productDto.CategoriaId);
+            ViewBag.CategoryId = new SelectList(categories, "Id", "Name", productDto.CategoryId);
 
             return View(productDto);
         }
@@ -77,7 +78,7 @@ namespace ControleLoja.WebUI.Controllers
             return View(productDto);
         }
 
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet()]
         public async Task<IActionResult> Delete(int? id)
         {
@@ -105,7 +106,7 @@ namespace ControleLoja.WebUI.Controllers
 
             if (productDto == null) return NotFound();
             var wwwroot = _environment.WebRootPath;
-            var image = Path.Combine(wwwroot, "images\\" + productDto.Imagem);
+            var image = Path.Combine(wwwroot, "images\\" + productDto.Image);
             var exists = System.IO.File.Exists(image);
             ViewBag.ImageExist = exists;
 

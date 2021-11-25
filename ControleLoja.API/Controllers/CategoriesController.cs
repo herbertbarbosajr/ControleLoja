@@ -1,5 +1,5 @@
-﻿using ControleLoja.Application.DTOs;
-using ControleLoja.Application.Interfaces;
+﻿using ControleLoja.Application.DTO;
+using ControleLoja.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;

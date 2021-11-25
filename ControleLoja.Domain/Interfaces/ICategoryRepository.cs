@@ -12,5 +12,6 @@ namespace ControleLoja.Domain.Interfaces
         Task<Category> Create(Category category);
         Task<Category> Update(Category category);
         Task<Category> Remove(Category category);
+        
     }
 }

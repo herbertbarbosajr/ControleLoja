@@ -1,14 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace ControleLoja.Application.DTOs
+namespace ControleLoja.Application.DTO
 {
     public class CategoryDTO
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Nome é obrigatório")]
+
+        [Required(ErrorMessage = "The Name is Required")]
         [MinLength(3)]
         [MaxLength(100)]
-        public string Nome { get; set; }
-
+        [DisplayName("Name")]
+        public string Name { get; set; }
     }
 }

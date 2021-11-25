@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using ControleLoja.Application.DTOs;
-using ControleLoja.Application.Interfaces;
+using ControleLoja.Application.DTO;
 using ControleLoja.Domain.Entities;
 using ControleLoja.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ControleLoja.Application.Services
@@ -47,5 +48,7 @@ namespace ControleLoja.Application.Services
             var categoryEntity = _categoryRepository.GetById(id).Result;
             await _categoryRepository.Remove(categoryEntity);
         }
+
+        
     }
 }

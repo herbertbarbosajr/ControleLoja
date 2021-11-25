@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
-using ControleLoja.Application.DTOs;
+using ControleLoja.Application.DTO;
 using ControleLoja.Application.Products.Commands;
 
-namespace ControleLoja.Application.Mappings
+
+namespace ControleLoja.Application.Mapping
 {
     public class DTOToCommandMappingProfile : Profile
     {

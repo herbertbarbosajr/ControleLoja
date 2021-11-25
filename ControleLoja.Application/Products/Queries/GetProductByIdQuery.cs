@@ -1,5 +1,8 @@
 ﻿using ControleLoja.Domain.Entities;
 using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ControleLoja.Application.Products.Queries
 {
@@ -12,3 +15,4 @@ namespace ControleLoja.Application.Products.Queries
         }
     }
 }
+

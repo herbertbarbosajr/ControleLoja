@@ -1,5 +1,6 @@
-﻿using ControleLoja.Application.DTOs;
+﻿using ControleLoja.Application.DTO;
 using ControleLoja.Application.Interfaces;
+using ControleLoja.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;

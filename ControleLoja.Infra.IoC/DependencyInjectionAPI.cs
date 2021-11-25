@@ -1,5 +1,5 @@
-﻿using ControleLoja.Application.Interfaces;
-using ControleLoja.Application.Mappings;
+﻿using ControleLoja.Application.DTO;
+using ControleLoja.Application.Interfaces;
 using ControleLoja.Application.Services;
 using ControleLoja.Domain.Account;
 using ControleLoja.Domain.Interfaces;

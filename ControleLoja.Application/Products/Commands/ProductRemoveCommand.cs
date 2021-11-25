@@ -12,3 +12,4 @@ namespace ControleLoja.Application.Products.Commands
         }
     }
 }
+

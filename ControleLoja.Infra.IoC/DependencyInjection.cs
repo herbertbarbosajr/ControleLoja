@@ -1,11 +1,11 @@
-﻿using ControleLoja.Application.Interfaces;
-using ControleLoja.Application.Mappings;
-using ControleLoja.Application.Services;
-using ControleLoja.Domain.Account;
+﻿using ControleLoja.Domain.Account;
 using ControleLoja.Domain.Interfaces;
 using ControleLoja.Infra.Data.Context;
 using ControleLoja.Infra.Data.Identity;
 using ControleLoja.Infra.Data.Repositories;
+using ControleLoja.Application.DTO;
+using ControleLoja.Application.Interfaces;
+using ControleLoja.Application.Services;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

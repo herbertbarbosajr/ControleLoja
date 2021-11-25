@@ -15,11 +15,11 @@ namespace ControleLoja.Application.Products.Handlers
         {
             _productRepository = productRepository;
         }
-        public async Task<Product> Handle(ProductCreateCommand request, 
+        public async Task<Product> Handle(ProductCreateCommand request,
             CancellationToken cancellationToken)
         {
-            var product = new Product(request.Nome, request.Descrição, request.Preço,
-                              request.Estoque, request.Imagem);
+            var product = new Product(request.Name, request.Description, request.Price,
+                              request.Stock, request.Image);
 
             if (product == null)
             {
@@ -27,7 +27,7 @@ namespace ControleLoja.Application.Products.Handlers
             }
             else
             {
-                product.CategoriaId = request.CategoriaId;
+                product.CategoryId = request.CategoryId;
                 return await _productRepository.CreateAsync(product);
             }
         }

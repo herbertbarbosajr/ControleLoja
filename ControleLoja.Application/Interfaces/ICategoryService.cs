@@ -1,8 +1,8 @@
-﻿using ControleLoja.Application.DTOs;
+﻿using ControleLoja.Application.DTO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ControleLoja.Application.Interfaces
+namespace ControleLoja.Application.Services
 {
     public interface ICategoryService
     {

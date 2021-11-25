@@ -1,4 +1,4 @@
-﻿using ControleLoja.Application.DTOs;
+﻿using ControleLoja.Application.DTO;
 using ControleLoja.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

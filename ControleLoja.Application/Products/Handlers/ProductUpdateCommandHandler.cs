@@ -24,12 +24,12 @@ namespace ControleLoja.Application.Products.Handlers
 
             if (product == null)
             {
-                throw new ApplicationException($"Entidade não pode ser carregada.");
+                throw new ApplicationException($"Entity could not be found.");
             }
             else
             {
-                product.Update(request.Nome, request.Descrição, request.Preço,
-                                request.Estoque, request.Imagem, request.CategoriaId);
+                product.Update(request.Name, request.Description, request.Price,
+                                request.Stock, request.Image, request.CategoryId);
 
                 return await _productRepository.UpdateAsync(product);
 

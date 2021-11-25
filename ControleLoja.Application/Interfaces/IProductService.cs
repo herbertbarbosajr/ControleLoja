@@ -1,4 +1,4 @@
-﻿using ControleLoja.Application.DTOs;
+﻿using ControleLoja.Application.DTO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

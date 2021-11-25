@@ -5,11 +5,11 @@ namespace ControleLoja.Application.Products.Commands
 {
     public abstract class ProductCommand : IRequest<Product>
     {
-        public string Nome { get; set; }
-        public string Descrição { get; set; }
-        public decimal Preço { get; set; }
-        public int Estoque { get; set; }
-        public string Imagem { get; set; }
-        public int CategoriaId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+        public int Stock { get; set; }
+        public string Image { get; set; }
+        public int CategoryId { get; set; }
     }
 }

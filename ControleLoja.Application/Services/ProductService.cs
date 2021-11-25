@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ControleLoja.Application.DTOs;
+using ControleLoja.Application.DTO;
 using ControleLoja.Application.Interfaces;
 using ControleLoja.Application.Products.Commands;
 using ControleLoja.Application.Products.Queries;
@@ -25,7 +25,7 @@ namespace ControleLoja.Application.Services
             var productsQuery = new GetProductsQuery();
 
             if (productsQuery == null)
-                throw new Exception($"Entidade não pode ser carregada.");
+                throw new Exception($"Entity could not be loaded.");
 
             var result = await _mediator.Send(productsQuery);
 
@@ -37,7 +37,7 @@ namespace ControleLoja.Application.Services
             var productByIdQuery = new GetProductByIdQuery(id.Value);
 
             if (productByIdQuery == null)
-                throw new Exception($"Entidade não pode ser carregada.");
+                throw new Exception($"Entity could not be loaded.");
 
             var result = await _mediator.Send(productByIdQuery);
 
@@ -72,7 +72,7 @@ namespace ControleLoja.Application.Services
         {
             var productRemoveCommand = new ProductRemoveCommand(id.Value);
             if (productRemoveCommand == null)
-                throw new Exception($"Entidade não pode ser carregada.");
+                throw new Exception($"Entity could not be loaded.");
 
             await _mediator.Send(productRemoveCommand);
         }

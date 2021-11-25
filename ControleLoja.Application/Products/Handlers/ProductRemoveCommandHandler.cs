@@ -24,7 +24,7 @@ namespace ControleLoja.Application.Products.Handlers
 
             if (product == null)
             {
-                throw new ApplicationException($"Entidade não encontrada.");
+                throw new ApplicationException($"Entity could not be found.");
             }
             else
             {

@@ -10,8 +10,8 @@ namespace ControleLoja.Domain.Tests
         [Fact]
         public void CreateProduct_WithValidParameters_ResultObjectValidState()
         {
-            Action action = () => new Product(1, "Nome do Produto", "Product Descrição do Produto", 9.99m,
-                99, "product Imagem");
+            Action action = () => new Product(1, "Name do Produto", "Product description do Produto", 9.99m,
+                99, "product Image");
             action.Should()
                 .NotThrow<ControleLoja.Domain.Validation.DomainExceptionValidation>();
         }
@@ -19,72 +19,72 @@ namespace ControleLoja.Domain.Tests
         [Fact]
         public void CreateProduct_NegativeIdValue_DomainExceptionInvalidId()
         {
-            Action action = () => new Product(-1, "Product Nome", "Product Descrição", 9.99m,
-                99, "product Imagem");
+            Action action = () => new Product(-1, "Product Name", "Product description", 9.99m,
+                99, "product Image");
 
             action.Should().Throw<ControleLoja.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("Invalid Id value.");
         }
 
         [Fact]
-        public void CreateProduct_ShortNomeValue_DomainExceptionShortNome()
+        public void CreateProduct_ShortNameValue_DomainExceptionShortName()
         {
-            Action action = () => new Product(1, "Pr", "Product Descrição", 9.99m, 99,
-                "product Imagem");
+            Action action = () => new Product(1, "Pr", "Product description", 9.99m, 99,
+                "product Image");
             action.Should().Throw<ControleLoja.Domain.Validation.DomainExceptionValidation>()
-                 .WithMessage("Invalid Nome, too short, minimum 3 characters");
+                 .WithMessage("Invalid Name, too short, minimum 3 characters");
         }
 
         [Fact]
-        public void CreateProduct_LongImagemNome_DomainExceptionLongImagemNome()
+        public void CreateProduct_LongImageName_DomainExceptionLongImageName()
         {
-            Action action = () => new Product(1, "Product Nome", "Product Descrição", 9.99m,
-                99, "product Imagem toooooooooooooooooooooooooooooooooooooooooooo loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooogggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");
+            Action action = () => new Product(1, "Product Name", "Product description", 9.99m,
+                99, "product Image toooooooooooooooooooooooooooooooooooooooooooo loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooogggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");
 
             action.Should()
                 .Throw<ControleLoja.Domain.Validation.DomainExceptionValidation>()
-                 .WithMessage("Invalid Imagem Nome, too long, maximum 250 characters");
+                 .WithMessage("Invalid Image Name, too long, maximum 250 characters");
         }
 
         [Fact]
-        public void CreateProduct_WithNullImagemNome_NoDomainException()
+        public void CreateProduct_WithNullImageName_NoDomainException()
         {
-            Action action = () => new Product(1, "Product Nome", "Product Descrição", 9.99m, 99, null);
+            Action action = () => new Product(1, "Product Name", "Product description", 9.99m, 99, null);
             action.Should().NotThrow<ControleLoja.Domain.Validation.DomainExceptionValidation>();
         }
 
         [Fact]
-        public void CreateProduct_WithNullImagemNome_NoNullReferenceException()
+        public void CreateProduct_WithNullImageName_NoNullReferenceException()
         {
-            Action action = () => new Product(1, "Product Nome", "Product Descrição", 9.99m, 99, null);
+            Action action = () => new Product(1, "Product Name", "Product description", 9.99m, 99, null);
             action.Should().NotThrow<NullReferenceException>();
         }
 
 
         [Fact]
-        public void CreateProduct_WithEmptyImagemNome_NoDomainException()
+        public void CreateProduct_WithEmptyImageName_NoDomainException()
         {
-            Action action = () => new Product(1, "Product Nome", "Product Descrição", 9.99m, 99, "");
+            Action action = () => new Product(1, "Product Name", "Product description", 9.99m, 99, "");
             action.Should().NotThrow<ControleLoja.Domain.Validation.DomainExceptionValidation>();
         }
 
         [Fact]
-        public void CreateProduct_InvalidPreçoValue_DomainException()
+        public void CreateProduct_InvalidPriceValue_DomainException()
         {
-            Action action = () => new Product(1, "Product Nome", "Product Descrição", -9.99m,
+            Action action = () => new Product(1, "Product Name", "Product description", -9.99m,
                 99, "");
             action.Should().Throw<ControleLoja.Domain.Validation.DomainExceptionValidation>()
-                 .WithMessage("Invalid Preço value");
+                 .WithMessage("Invalid Price value");
         }
 
         [Theory]
         [InlineData(-5)]
-        public void CreateProduct_InvalidEstoqueValue_ExceptionDomainNegativeValue(int value)
+        public void CreateProduct_InvalidStockValue_ExceptionDomainNegativeValue(int value)
         {
-            Action action = () => new Product(1, "Pro", "Product Descrição", 9.99m, value,
-                "product Imagem");
+            Action action = () => new Product(1, "Pro", "Product description", 9.99m, value,
+                "product Image");
             action.Should().Throw<ControleLoja.Domain.Validation.DomainExceptionValidation>()
-                   .WithMessage("Invalid Estoque value");
+                   .WithMessage("Invalid Stock value");
         }
 
     }

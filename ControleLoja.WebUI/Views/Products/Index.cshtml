@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ControleLoja.Application.DTOs.ProductDTO>
+﻿@model IEnumerable<ControleLoja.Application.DTO.ProductDTO>
 
 @{
     ViewData["Title"] = "Gestão de Produtos";
@@ -29,13 +29,13 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Nome)
+                    @Html.DisplayNameFor(model => model.Name)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Descrição)
+                    @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Preço)
+                    @Html.DisplayNameFor(model => model.Price)
                 </th>
                 <th></th>
             </tr>
@@ -45,13 +45,13 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
+                        @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Descrição)
+                        @Html.DisplayFor(modelItem => item.Description)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Preço)
+                        @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id" title="Edita" class="btn btn-warning">

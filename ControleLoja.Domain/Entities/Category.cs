@@ -6,35 +6,35 @@ namespace ControleLoja.Domain.Entities
 {
     public sealed class Category : Entity
     {
-        public string Nome { get; private set; }
+        public string Name { get; private set; }
 
-        public Category(string nome)
+        public Category(string name)
         {
-            ValidateDomain(Nome);
+            ValidateDomain(name);
         }
 
-        public Category(int id, string nome)
+        public Category(int id, string name)
         {
             DomainExceptionValidation.When(id < 0, "Id inválido.");
             Id = id;
-            ValidateDomain(Nome);
+            ValidateDomain(name);
         }
 
-        public void Update(string nome)
+        public void Update(string name)
         {
-            ValidateDomain(Nome);
+            ValidateDomain(name);
         }
         public ICollection<Product> Produtos { get; set; }
 
-        private void ValidateDomain(string nome)
+        private void ValidateDomain(string name)
         {
-            DomainExceptionValidation.When(string.IsNullOrEmpty(nome),
-                "Nome Invalido.Nome é obrigatório.");
+            DomainExceptionValidation.When(string.IsNullOrEmpty(name),
+                "Name Invalido.Name é obrigatório.");
 
-            DomainExceptionValidation.When(Nome.Length < 3,
-               "Nome Invalido, minimo 3 caracteres");
+            DomainExceptionValidation.When(name.Length < 3,
+               "Name Invalido, minimo 3 caracteres");
 
-            Nome = nome;
+            Name = name;
         }
     }
 }
