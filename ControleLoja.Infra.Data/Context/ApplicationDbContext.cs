@@ -13,6 +13,8 @@ namespace ControleLoja.Infra.Data.Context
 
         public DbSet<Category> Categorias { get; set; }
         public DbSet<Product> Produtos { get; set; }
+        public DbSet<Sales> Sales { get; set; }
+        public DbSet<Expenditure> Expenditures { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

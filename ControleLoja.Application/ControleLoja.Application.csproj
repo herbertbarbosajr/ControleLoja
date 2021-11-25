@@ -13,4 +13,8 @@
     <ProjectReference Include="..\ControleLoja.Domain\ControleLoja.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Sales\Queries\" />
+  </ItemGroup>
+
 </Project>

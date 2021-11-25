@@ -1,5 +1,4 @@
 ﻿using ControleLoja.Domain.Validation;
-using System.Text.Json.Serialization;
 
 namespace ControleLoja.Domain.Entities
 {

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ControleLoja.Application.Products.Handlers
 {
-    public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, IEnumerable<Product>>
+    public class GetSalesQueryHandler : IRequestHandler<GetProductsQuery, IEnumerable<Product>>
     {
         private readonly IProductRepository _productRepository;
 
-        public GetProductsQueryHandler(IProductRepository productRepository)
+        public GetSalesQueryHandler(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
